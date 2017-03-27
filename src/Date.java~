@@ -1,0 +1,42 @@
+public class Date{
+	 private int day, month, year;
+	
+public Date(int day, int month, int year){
+}
+	public int getDay(){
+		return this.day;
+	}
+	public int getMonth(){
+		return this.month;
+	}
+	public int getYear(){
+		return this.year;
+	}
+
+	public boolean isSameYear(Date another){
+
+		if(this.day == another.getDay()){
+			return true;
+		}else{
+			return false; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
