@@ -18,7 +18,7 @@ public class MainDate{
 
 	System.out.println("comprobarsi es correcto el numero de dias: "+dateFalse.checkDayOfMonth());
 
-	
+	System.out.println("Estacion: "+today.seasonForMonth());
 
 
 

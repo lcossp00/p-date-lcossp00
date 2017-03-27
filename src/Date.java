@@ -103,4 +103,68 @@ public boolean checkDayOfMonth(){
 		return true;
 	}
 }
+
+public String seasonForMonth(){
+	String estacion="a";
+	String primavera="Primavera";
+	String verano="Verano";
+	String otonio="Otoño";
+	String invierno="Invierno";
+	switch(this._month){
+		case 3:if(this._day<=20){
+				estacion=invierno;
+			}if(this._day>20){
+				estacion=primavera;
+			}
+			break;
+		case 4: //next
+		case 5: estacion=primavera;
+			break;
+		case 6: if(this._day<=20){
+			 	estacion=primavera;
+			}if(this._day>20){
+			 	estacion=verano;
+			}
+			break;
+		case 7: //next
+		case 8: estacion=verano;
+			break;
+		case 9: if(this._day<=20){
+			 	estacion=verano;
+			}if(this._day>20){
+			 	estacion=otonio;
+			}
+			break;
+		case 10: //next
+		case 11: estacion=otonio;
+			break;
+		case 12: if(this._day<=20){
+			 	estacion=otonio;
+			}if(this._day>20){
+			 	estacion=invierno;
+			}
+		case 1: //next
+		case 2:	estacion=invierno;
+			break;	
+	}
+	return estacion.toString();
+}
+
+public int monthsLeftEndYear(this._month){
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
