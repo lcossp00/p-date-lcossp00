@@ -75,7 +75,10 @@ public Date(int day, int month, int year){ //Constructor
 	
 
 public int getNumDaysOfMonth(){
-	int numOfDays=0;
+return	this.getNumDaysOfMonth(this._month);
+}
+private int getNumDaysOfMonth(int month){ //Porque private
+int numOfDays=0;
 	switch(this._month){
 		case 1: //next
 		case 3: //next
@@ -162,16 +165,28 @@ public int monthsLeftEndYear(){
 }	
 
 public String getDate(){
-	String fecha= (getDay()+" "+getMonth()+" "+getYear()); //Hay otra forma de concatenar son poner +" "+
+	String fecha= (getDay()+" "+getMonth()+" "+getYear()); //Hay otra forma de concatenar son poner +" "+ ..o de incluir la clase fecha
 	return fecha.toString();
 }
 
-public getDatesUntilEndOfMonth(){
-	for(int i=getDay(); 
+/*
+public int getDatesUntilEndOfMonth(){
+	
+	for(int i=this._day;i<=getNumDaysOfMonth();i++){
+		this._day=this._day+1;
+	}
+	return this._day;
+}	
 
-
-
-
+*/
+public int printMonthsSameAmountDays(){
+	for(int i=1;i<=12;i++){
+		if(this.getNumDaysOfMonth(i)==this.getNumDaysOfMonth()){
+			this.getNameMonth();
+		}
+	}
+		
+}
 
 
 
