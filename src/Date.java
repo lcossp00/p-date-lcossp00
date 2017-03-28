@@ -150,14 +150,24 @@ public String seasonForMonth(){
 	return estacion.toString();
 }
 
-public int monthsLeftEndYear(this._month){
-	
+public int monthsLeftEndYear(){
+	int counter=0;
+	for (int i=getMonth();i<12;i++){
+	//se puede cambiar el i<=12 por otra cosa?
+	//hay forma de declarar la i dentro del for sin que me den errores?
+	//Es mas correcto colocar this._month o getMonth()
+	counter++;
+	}
+ 	return counter;
+}	
 
+public String getDate(){
+	String fecha= (getDay()+" "+getMonth()+" "+getYear()); //Hay otra forma de concatenar son poner +" "+
+	return fecha.toString();
+}
 
-
-
-
-
+public getDatesUntilEndOfMonth(){
+	for(int i=getDay(); 
 
 
 
