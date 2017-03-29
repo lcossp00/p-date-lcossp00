@@ -1,24 +1,26 @@
 public class Date{
-	 private int _day, _month, _year;
+	 private int day;
+	private int month;
+	private int year;
 	
 public Date(int day, int month, int year){ //Constructor
-	_day = day;
-	_month = month;
-	_year = year;
+	this.day = day;
+	this.month = month;
+	this.year = year;
 }
 	public int getDay(){
-		return this._day;
+		return this.day;
 	}
 	public int getMonth(){
-		return this._month;
+		return this.month;
 	}
 	public int getYear(){
-		return this._year;
+		return this.year;
 	}
 
 	public boolean isSameDay(Date another){ //Desplegado para entenderlo mejor
 
-		if(this._day == another.getDay()){
+		if(this.day == another.getDay()){
 			return true;
 		}else{
 			return false; 
@@ -26,15 +28,15 @@ public Date(int day, int month, int year){ //Constructor
 	}
 	public boolean isSameMonth(Date another){
 
-		return (this._month == another.getMonth());
+		return (this.month == another.getMonth());
 	}
 
 	public boolean isSameYear(Date another){
 
-		return (this._year == another.getYear());
+		return (this.year == another.getYear());
 	}
 	public boolean isSame(Date another){
-		if(this._day == another.getDay() && this._month == another.getMonth() && this._year == another.getYear()){
+		if(this.day == another.getDay() && this.month == another.getMonth() && this.year == another.getYear()){
 		return true;
 		}else{
 		return false;
@@ -44,7 +46,7 @@ public Date(int day, int month, int year){ //Constructor
 
 	public String getNameMonth(){
 		String nameMonth="Enero";
-		switch(this._month){
+		switch(this.month){
 			case 1: nameMonth="Enero";
 				break;
 			case 2: nameMonth="Febrero";
@@ -75,11 +77,11 @@ public Date(int day, int month, int year){ //Constructor
 	
 
 public int getNumDaysOfMonth(){
-return	this.getNumDaysOfMonth(this._month);
+return	this.getNumDaysOfMonth(this.month);
 }
 private int getNumDaysOfMonth(int month){ //Porque private
 int numOfDays=0;
-	switch(this._month){
+	switch(this.month){
 		case 1: //next
 		case 3: //next
 		case 5: //next
@@ -100,7 +102,7 @@ int numOfDays=0;
 }
 
 public boolean checkDayOfMonth(){
-	if(this._day > this.getNumDaysOfMonth()){
+	if(this.day > this.getNumDaysOfMonth()){
 		return false;
 	}else{
 		return true;
@@ -113,37 +115,37 @@ public String seasonForMonth(){
 	String verano="Verano";
 	String otonio="Otoño";
 	String invierno="Invierno";
-	switch(this._month){
-		case 3:if(this._day<=20){
+	switch(this.month){
+		case 3:if(this.day<=20){
 				estacion=invierno;
-			}if(this._day>20){
+			}if(this.day>20){
 				estacion=primavera;
 			}
 			break;
 		case 4: //next
 		case 5: estacion=primavera;
 			break;
-		case 6: if(this._day<=20){
+		case 6: if(this.day<=20){
 			 	estacion=primavera;
-			}if(this._day>20){
+			}if(this.day>20){
 			 	estacion=verano;
 			}
 			break;
 		case 7: //next
 		case 8: estacion=verano;
 			break;
-		case 9: if(this._day<=20){
+		case 9: if(this.day<=20){
 			 	estacion=verano;
-			}if(this._day>20){
+			}if(this.day>20){
 			 	estacion=otonio;
 			}
 			break;
 		case 10: //next
 		case 11: estacion=otonio;
 			break;
-		case 12: if(this._day<=20){
+		case 12: if(this.day<=20){
 			 	estacion=otonio;
-			}if(this._day>20){
+			}if(this.day>20){
 			 	estacion=invierno;
 			}
 		case 1: //next
@@ -156,37 +158,53 @@ public String seasonForMonth(){
 public int monthsLeftEndYear(){
 	int counter=0;
 	for (int i=getMonth();i<12;i++){
-	//se puede cambiar el i<=12 por otra cosa?
-	//hay forma de declarar la i dentro del for sin que me den errores?
-	//Es mas correcto colocar this._month o getMonth()
 	counter++;
 	}
  	return counter;
 }	
 
 public String getDate(){
-	String fecha= (getDay()+" "+getMonth()+" "+getYear()); //Hay otra forma de concatenar son poner +" "+ ..o de incluir la clase fecha
+	String fecha= (getDay()+"/"+getMonth()+"/"+getYear()); 
 	return fecha.toString();
 }
 
-/*
-public int getDatesUntilEndOfMonth(){
-	
-	for(int i=this._day;i<=getNumDaysOfMonth();i++){
-		this._day=this._day+1;
+
+public String getDatesUntilEndOfMonth(){
+	StringBuilder salida=new StringBuilder();
+	for(int i=this.day+1;i<=getNumDaysOfMonth(getMonth());i++){
+//		salida.append(i+"/"+getNameMonth()+"/"+getYear());
+		salida.append(new Date(i, this.month, this.year).toString());
 	}
-	return this._day;
+	return salida.toString();	
 }	
 
-*/
-public int printMonthsSameAmountDays(){
+/*
+public void printMonthsSameAmountDays(){
 	for(int i=1;i<=12;i++){
-		if(this.getNumDaysOfMonth(i)==this.getNumDaysOfMonth()){
+		if(this.getNumDaysOfMonth(i)==this.getNumDaysOfMonth(this.month)){
 			this.getNameMonth();
 		}
-	}
-		
+	}		
 }
+*/
+public String toString(){
+		
+return this.day+"/"+this.month+"/"+this.year;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
