@@ -24,10 +24,9 @@ public class MainDate{
 	System.out.println("meses hasta final de año: "+today.monthsLeftEndYear());
 	System.out.println("imprimir mi fecha: "+today.getDate());
 
-	System.out.println("dias hasta final de mes: "+today.getDatesUntilEndOfMonth());
-	System.out.println("dias hasta final de mes: "+today.toString());
-	
-	//System.out.prinln(today.printMonthsSameAmountDays());
+	//System.out.println("imprimir fecha hasta final de mes: "+today.getDatesUntilEndOfMonth());
+
+	System.out.prinln(today.printMonthsSameAmountDays());
 
 
 
