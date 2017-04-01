@@ -37,13 +37,12 @@ public Date(int day, int month, int year){ //Constructor
 		return (this.year == another.getYear());
 	}
 	public boolean isSame(Date another){
-		if(this._day == another.getDay() && this.month == another.getMonth() && this.year == another.getYear()){
+		if(this.day == another.getDay() && this.month == another.getMonth() && this.year == another.getYear()){
 		return true;
 		}else{
 		return false;
 		}
 	}
-
 
 	public String getNameMonth(){
 		String nameMonth="Enero";
@@ -76,7 +75,6 @@ public Date(int day, int month, int year){ //Constructor
 		return nameMonth.toString();
 	} 
 	
-
 public int getNumDaysOfMonth(){
 return	this.getNumDaysOfMonth(this.month);
 }
@@ -117,9 +115,9 @@ public String seasonForMonth(){
 	String otonio="Otoño";
 	String invierno="Invierno";
 	switch(this.month){
-		case 3:if(this._day<=20){
+		case 3:if(this.day<=20){
 				estacion=invierno;
-			}if(this._day>20){
+			}if(this.day>20){
 				estacion=primavera;
 			}
 			break;
@@ -186,15 +184,50 @@ public String getDatesUntilEndOfMonth(){
 public void printMonthsSameAmountDays(){
 	for(int i=1;i<=12;i++){
 		if(this.getNumDaysOfMonth(i)==this.getNumDaysOfMonth(this.month)){
-			this.getNameMonth();
+			System.out.println(this.getNameMonth(i));
 		}
 	}		
 	
 }
 */
 public String toString(){
-	return this.day+"/"+this.month+"/"+this.year;
+	return this.day+"/"+this.month+"/"+this.year+"\n";
+ }
+
+public int countDaysSinceFirstOfYear(){
+	int counter=this.day;
+	for(int i=1;i<this.month;i++){
+		counter=counter+getNumDaysOfMonth();
+	}
+	return counter;
 }
+public Date(int year){
+	this.year=year;
+	this.month=(int) (Math.random()*12+1);
+	this.day=(int) (Math.random()*(getNumDaysOfMonth(this.month))+1);
+	}
+public int getNumGuess(){
+	int counter=0;
+	Date randomDate;
+	boolean end=false;
+	while(!end){
+		randomDate=new Date(this.year);
+		counter++;
+	
+		if(this.equals(randomDate)){
+			end=true;
+		}
+	}
+	return counter;
+}
+
+
+
+
+
+
+
+
 
 
 
