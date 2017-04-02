@@ -206,11 +206,12 @@ public Date(int year){
 	this.month=(int) (Math.random()*12+1);
 	this.day=(int) (Math.random()*(getNumDaysOfMonth(this.month))+1);
 	}
+/*
 public int getNumGuess(){
 	int counter=0;
 	Date randomDate;
 	boolean end=false;
-	while(!end){
+	while(end=false){
 		randomDate=new Date(this.year);
 		counter++;
 	
@@ -220,7 +221,21 @@ public int getNumGuess(){
 	}
 	return counter;
 }
-
+*/
+public int getNumGuess(){
+	int counter=0;
+	Date randomDate;
+	boolean end=false;
+	do{
+		randomDate=new Date(this.year);
+		counter++;
+	
+		if(this.equals(randomDate)){
+			end=true;
+		}
+	}while(end=false);
+	return counter;
+}
 
 
 

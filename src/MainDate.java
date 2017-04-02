@@ -29,7 +29,7 @@ public class MainDate{
 	
 	System.out.println("fechas desde inicio de año: "+today.countDaysSinceFirstOfYear());
 
-	System.out.println("intentos para generar una fecha random"+today.getNumGuess());
+	System.out.println("intentos para generar una fecha random: "+today.getNumGuess());
 
 
 }
